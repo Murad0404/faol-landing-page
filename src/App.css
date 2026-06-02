@@ -301,7 +301,6 @@
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.12));
-  animation: float 6s ease-in-out infinite;
 }
 
 .hero-player-img {
@@ -313,7 +312,6 @@
   left: 60px;
   align-self: center;
   filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08));
-  animation: float 5s ease-in-out infinite alternate;
   position: relative;
   z-index: 2;
 }
