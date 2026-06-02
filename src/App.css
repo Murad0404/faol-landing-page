@@ -143,6 +143,7 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  animation: float 5s ease-in-out infinite alternate;
 }
 
 @media (max-width: 1024px) {
@@ -314,6 +315,7 @@
   filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08));
   position: relative;
   z-index: 2;
+  animation: float 5s ease-in-out infinite alternate;
 }
 
 .hero-glow-overlay {
