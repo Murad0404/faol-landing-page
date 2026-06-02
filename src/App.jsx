@@ -117,7 +117,6 @@ function App() {
             <img src="/assets/adventure_icons_new.png" alt="Faol App 3D Icons Collection" className="icons-grid-img" />
           </div>
           <div className="adventure-content">
-            <div className="section-tag">Faol Imkoniyatlari</div>
             <h2 className="section-title">FAOL — sport uchun yaratilgan yagona ekotizim</h2>
             <ul className="feature-list">
               <li>Futbol va boshqa sport maydonlarini onlayn bron qilish</li>
@@ -136,7 +135,6 @@ function App() {
       <section className="create-anytime-section">
         <div className="container">
           <div className="create-header">
-            <div className="section-tag">Istalgan vaqtda, istalgan joyda</div>
             <h2 className="section-title">Sport. Jamoa. G'alaba.</h2>
             <p className="section-text">
               FAOL orqali maydon bron qiling, mahsulot xarid qiling, trener toping va do'stlaringiz bilan turnirlar tashkil eting. Sport olamidagi barcha imkoniyatlar bir platformada jamlangan.
