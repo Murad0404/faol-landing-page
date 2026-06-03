@@ -630,7 +630,7 @@
   }
 
   .hero-player-img {
-    width: 100% !important;
+    width: 140% !important; max-width: none !important;
     left: 0 !important;
     margin-top: 2rem !important;
   }
