@@ -57,11 +57,11 @@ const SoccerFieldLines = () => (
 );
 
 function App() {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("home");
 
   return (
     <div className="app">
-      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
+      
       {/* Vector Soccer Lines Overlay */}
       <SoccerFieldLines />
 
@@ -72,15 +72,19 @@ function App() {
             <img src="/assets/faol_full_logo.png" alt="Faol Logo" className="logo-full-img" />
           </a>
           <nav className="nav-pill">
-            <a href="#" className="nav-link active">Home</a>
-            <a href="#about" className="nav-link inactive">Biz haqimizda</a>
-            <a href="#contact" className="nav-link inactive" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }}>Kontakt</a>
+            <a href="#" className={`nav-link ${activeTab === 'home' ? 'active' : 'inactive'}`} onClick={(e) => { e.preventDefault(); setActiveTab("home"); }}>Home</a>
+            <a href="#about" className={`nav-link ${activeTab === 'about' ? 'active' : 'inactive'}`} onClick={(e) => { e.preventDefault(); setActiveTab("about"); }}>Biz haqimizda</a>
+            <a href="#contact" className={`nav-link ${activeTab === 'contact' ? 'active' : 'inactive'}`} onClick={(e) => { e.preventDefault(); setActiveTab("contact"); }}>Kontakt</a>
           </nav>
           <a href="#download" className="cta-button">Get Started</a>
         </div>
       </header>
 
-      <section className="hero">
+      {activeTab === "contact" ? (
+        <ContactPage />
+      ) : (
+        <>
+          <section className="hero">
         <div className="hero-glow-overlay"></div>
         <div className="container hero-grid">
           <div className="hero-content">
@@ -168,6 +172,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      </>
+      )}
 
       {/* Footer Section */}
       <footer className="footer" id="contact">
