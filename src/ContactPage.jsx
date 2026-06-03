@@ -58,7 +58,7 @@ const ContactPage = () => {
               <a href="https://t.me/Murod_22_24" className="social-link-page" target="_blank" rel="noreferrer">Telegram</a>
               <a href="https://instagram.com/murod_dadaboev1" className="social-link-page" target="_blank" rel="noreferrer">Instagram</a>
               <a href="https://www.linkedin.com/in/murod-dadaboev" className="social-link-page" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="tel:+998901234567" className="social-link-page">📞 +998 (90) 123-45-67</a>
+              <a href="tel:+998901580404" className="social-link-page">📞 +998 90 158 04 04</a>
             </div>
           </div>
         </div>
