@@ -2,6 +2,7 @@
 
 /* Base container and layout */
 .app {
+  animation: fadeInApp 0.8s ease-out both;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -154,7 +155,7 @@
 }
 
 .hero-content {
-  animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideInLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -272,7 +273,7 @@
 
 /* Hero Media Column */
 .hero-media-container {
-  animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -596,4 +597,9 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+@keyframes fadeInApp {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
