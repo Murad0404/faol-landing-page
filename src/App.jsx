@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ContactModal from './ContactModal';
 import './App.css';
 
 // Premium Inline SVGs for perfect layout and zero dependency issues
@@ -56,8 +57,11 @@ const SoccerFieldLines = () => (
 );
 
 function App() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   return (
     <div className="app">
+      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
       {/* Vector Soccer Lines Overlay */}
       <SoccerFieldLines />
 
@@ -70,7 +74,7 @@ function App() {
           <nav className="nav-pill">
             <a href="#" className="nav-link active">Home</a>
             <a href="#about" className="nav-link inactive">Biz haqimizda</a>
-            <a href="#contact" className="nav-link inactive">Kontakt</a>
+            <a href="#contact" className="nav-link inactive" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }}>Kontakt</a>
           </nav>
           <a href="#download" className="cta-button">Get Started</a>
         </div>
