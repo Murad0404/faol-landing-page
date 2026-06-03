@@ -675,3 +675,19 @@
     display: none;
   }
 }
+
+/* Fix for empty space around player on mobile */
+@media (max-width: 768px) {
+  .hero-player-img {
+    margin-top: -1rem !important; /* Matnga yaqinlashtirish */
+    margin-bottom: -2rem !important; /* Pastki blokni yuqoriga surish */
+  }
+  
+  .hero {
+    padding-bottom: 2rem !important;
+  }
+  
+  .hero-content {
+    margin-bottom: 0 !important;
+  }
+}
