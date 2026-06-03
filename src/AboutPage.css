@@ -192,3 +192,38 @@
     justify-content: center;
   }
 }
+
+/* Small Mobile Fixes for About Page */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.2rem !important;
+    text-align: center !important;
+  }
+  
+  .about-text-content p {
+    font-size: 1.05rem !important;
+  }
+
+  .about-team-section {
+    margin-top: 3rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .team-card {
+    padding: 1.2rem !important;
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .team-avatar {
+    margin: 0 0 1rem 0 !important;
+  }
+
+  .team-info p {
+    text-align: center !important;
+  }
+
+  .team-links {
+    justify-content: center !important;
+  }
+}

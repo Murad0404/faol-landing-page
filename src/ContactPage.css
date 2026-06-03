@@ -238,3 +238,23 @@
   align-items: center;
   gap: 12px;
 }
+
+/* Small Mobile Fixes for Contact Page */
+@media (max-width: 900px) {
+  .contact-title {
+    font-size: 2.2rem !important;
+    text-align: center;
+  }
+  
+  .contact-subtitle {
+    text-align: center;
+  }
+
+  .ai-chat-container-page {
+    height: 500px !important;
+  }
+
+  .socials-wrapper-page {
+    justify-content: center !important;
+  }
+}
