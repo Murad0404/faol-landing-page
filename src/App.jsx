@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ContactModal from './ContactModal';
+import ContactPage from './ContactPage';
 import './App.css';
 
 // Premium Inline SVGs for perfect layout and zero dependency issues
