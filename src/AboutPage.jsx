@@ -31,6 +31,37 @@ const AboutPage = () => {
             Bugungi kunda Faol App ustida ishlash davom etmoqda va biz foydalanuvchilar uchun sport hamda xizmatlar sohasidagi eng qulay va zamonaviy platformalardan birini yaratishni maqsad qilganmiz.
           </p>
         </div>
+
+        {/* Team Section */}
+        <div className="about-team-section">
+          <div className="team-card">
+            <div className="team-avatar">
+              <img src="/assets/murod.png" alt="Murod Dadaboyev" />
+            </div>
+            <div className="team-info">
+              <h3>Murod Dadaboyev</h3>
+              <p>Founder & UI/UX Designer</p>
+              <div className="team-links">
+                <a href="https://www.linkedin.com/in/murod-dadaboev" target="_blank" rel="noopener noreferrer" className="team-link-btn">LinkedIn</a>
+                <a href="#" className="team-link-btn">Website</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-card">
+            <div className="team-avatar">
+              <div className="avatar-placeholder">S</div>
+            </div>
+            <div className="team-info">
+              <h3>Shaxriyor</h3>
+              <p>DevOps Specialist</p>
+              <div className="team-links">
+                <a href="#" target="_blank" rel="noopener noreferrer" className="team-link-btn">LinkedIn</a>
+                <a href="#" className="team-link-btn">Website</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
