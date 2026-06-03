@@ -14,6 +14,9 @@
   text-align: left;
   background: transparent;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Kontentni markazlashtirish */
 }
 
 .about-title {
@@ -22,7 +25,8 @@
   margin-bottom: 2.5rem;
   color: var(--dark-text);
   letter-spacing: -1.5px;
-  text-align: left;
+  text-align: center; /* Sarlavhani markazlashtirish */
+  width: 100%;
 }
 
 .about-text-content {
@@ -30,6 +34,7 @@
   flex-direction: column;
   gap: 1.5rem;
   font-family: 'Outfit', 'Georgia', serif; 
+  width: 100%;
 }
 
 .about-text-content p {
@@ -37,6 +42,7 @@
   line-height: 1.7;
   color: var(--dark-sub);
   margin: 0;
+  text-align: left;
 }
 
 .about-text-content strong {
@@ -49,28 +55,33 @@
   font-weight: 600;
   color: var(--purple-primary) !important;
   font-size: 1.35rem !important;
-  max-width: 850px;
+  max-width: 100%;
+  text-align: center !important;
 }
 
-/* Team Section Styles */
+/* Team Section Styles - Centered with equal margins */
 .about-team-section {
   display: flex;
   gap: 2rem;
   margin-top: 5rem;
-  justify-content: flex-start;
+  justify-content: center; /* Kartochkalarni o'rtaga joylash */
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .team-card {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: #ffffff; /* 100% Oq fon */
+  background: #ffffff;
   padding: 1.5rem 2rem;
   border-radius: 24px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: var(--transition-smooth);
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  flex: 1;
+  min-width: 320px; /* Mobil uchun qulay kenglik */
+  max-width: 450px;
 }
 
 .team-card:hover {
@@ -79,8 +90,8 @@
 }
 
 .team-avatar {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--purple-primary);
@@ -97,18 +108,6 @@
   object-fit: cover;
 }
 
-.avatar-placeholder {
-  width: 100%;
-  height: 100%;
-  background: var(--purple-primary);
-  color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.2rem;
-  font-weight: 800;
-}
-
 .team-info h3 {
   font-size: 1.3rem;
   margin-bottom: 0.2rem;
@@ -121,6 +120,7 @@
   color: var(--purple-primary) !important;
   font-weight: 600;
   margin-bottom: 0.8rem !important;
+  text-align: left !important;
 }
 
 .team-links {
@@ -157,15 +157,38 @@
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
   .about-team-section {
-    justify-content: center;
+    gap: 1.5rem;
   }
   .team-card {
-    width: 100%;
-    max-width: 450px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 2rem 1rem 6rem 1rem;
   }
   .about-title {
     font-size: 2.8rem;
+  }
+  .about-text-content p {
+    font-size: 1.15rem;
+  }
+  .team-card {
+    padding: 1.2rem;
+    flex-direction: column; /* Mobilda rasm tepada bo'ladi */
+    text-align: center;
+  }
+  .team-info h3 {
+    white-space: normal;
+  }
+  .team-info p {
+    text-align: center !important;
+  }
+  .team-links {
+    justify-content: center;
   }
 }

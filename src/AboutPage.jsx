@@ -58,7 +58,7 @@ const AboutPage = () => {
 
           <div className="team-card">
             <div className="team-avatar">
-              <div className="avatar-placeholder">S</div>
+              <img src="/assets/shaxriyor.png" alt="Shaxriyor Jabborov" />
             </div>
             <div className="team-info">
               <h3>Shaxriyor Jabborov</h3>
