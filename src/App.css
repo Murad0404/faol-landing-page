@@ -713,7 +713,7 @@
 @media (max-width: 768px) {
   .hero-player-img {
     width: 170% !important; /* Yana ham kattaroq */
-    transform: translateX(15%) !important; /* Biroz o'ngga surish */
+    transform: translateX(5%) !important; /* Biroz o'ngga surish */
     margin-top: -4rem !important;
     margin-bottom: -7rem !important;
   }
