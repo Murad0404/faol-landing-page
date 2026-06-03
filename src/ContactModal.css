@@ -1,183 +1,155 @@
-.modal-overlay {
+.panel-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(13, 14, 18, 0.6);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: rgba(13, 14, 18, 0.4);
+  backdrop-filter: blur(8px);
   z-index: 1000;
-  animation: fadeInModal 0.3s ease-out forwards;
+  opacity: 0;
+  animation: fadeInOverlay 0.4s ease-out forwards;
 }
 
-.modal-content {
-  background: var(--white);
-  width: 90%;
-  max-width: 900px;
-  height: 80vh;
-  max-height: 600px;
-  border-radius: 24px;
-  position: relative;
+.panel-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 600px;
+  height: 100vh;
+  background: var(--bg-gradient);
+  z-index: 1001;
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  animation: slideInPanel 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  font-family: 'Inter', sans-serif;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: slideUpModal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: transparent;
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.panel-header h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--dark-text);
+  letter-spacing: -1px;
+}
+
+.panel-close {
+  background: rgba(0,0,0,0.05);
   border: none;
-  font-size: 32px;
-  color: #666;
+  font-size: 24px;
+  color: var(--dark-text);
   cursor: pointer;
-  z-index: 10;
-  transition: 0.2s;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: var(--transition-smooth);
 }
 
-.modal-close:hover {
-  color: var(--purple-primary);
-  background: rgba(0,0,0,0.05);
+.panel-close:hover {
+  background: var(--purple-primary);
+  color: var(--white);
+  transform: rotate(90deg);
 }
 
-.modal-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  height: 100%;
-}
-
-@media (max-width: 800px) {
-  .modal-grid {
-    grid-template-columns: 1fr;
-    overflow-y: auto;
-  }
-}
-
-/* Left Section */
-.contact-info-section {
+.panel-content {
+  flex: 1;
+  overflow-y: auto;
   padding: 40px;
-  background: #f8f9fc;
   display: flex;
   flex-direction: column;
+  gap: 40px;
 }
 
-.contact-info-section h2 {
-  font-size: 1.8rem;
+/* Form Section */
+.panel-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--dark-text);
-  margin-bottom: 10px;
-  font-family: var(--font-heading);
-}
-
-.contact-info-section > p {
-  color: var(--dark-sub);
-  margin-bottom: 25px;
-  font-size: 0.95rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 30px;
+  gap: 15px;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 14px 15px;
+  padding: 16px 20px;
   border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 12px;
+  border-radius: 16px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   outline: none;
-  transition: 0.3s;
-  background: white;
+  transition: var(--transition-smooth);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--dark-text);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: var(--purple-primary);
-  box-shadow: 0 0 0 3px rgba(107, 56, 251, 0.1);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(107, 56, 251, 0.15);
 }
 
 .submit-btn {
   background: var(--purple-primary);
-  color: white;
+  color: var(--white);
   border: none;
-  padding: 14px;
-  border-radius: 12px;
-  font-weight: 600;
+  padding: 16px;
+  border-radius: 100px;
+  font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-premium);
 }
 
 .submit-btn:hover {
   background: var(--purple-hover);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
-.company-details h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: var(--dark-text);
-}
-
-.company-details p {
-  color: var(--dark-sub);
-  margin-bottom: 5px;
-  font-size: 0.95rem;
-}
-
-.modal-socials {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.modal-socials a {
-  text-decoration: none;
-  color: white;
-  background: var(--dark-text);
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.modal-socials a:hover {
-  background: var(--purple-primary);
-}
-
-/* Right Section - AI Chat */
-.ai-chat-section {
+/* AI Chat Section */
+.ai-chat-container {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  background: var(--white);
+  height: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .chat-header {
-  padding: 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--dark-text);
+  padding: 15px 20px;
+  background: var(--dark-text);
+  color: var(--white);
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 10px;
-  background: white;
 }
 
 .chat-messages {
@@ -187,49 +159,50 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background: #f4f6fa;
+  background: #f8f9fc;
 }
 
 .chat-bubble {
   max-width: 85%;
-  padding: 12px 16px;
+  padding: 12px 18px;
   border-radius: 16px;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  line-height: 1.5;
   animation: fadeInBubble 0.3s ease-out;
-  font-family: 'Inter', sans-serif;
 }
 
 .chat-bubble.ai {
   background: var(--purple-primary);
-  color: white;
+  color: var(--white);
   align-self: flex-start;
   border-bottom-left-radius: 4px;
 }
 
 .chat-bubble.user {
-  background: white;
+  background: var(--white);
   color: var(--dark-text);
   align-self: flex-end;
   border-bottom-right-radius: 4px;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
 }
 
 .chat-input-area {
-  padding: 15px 20px;
+  padding: 15px;
   border-top: 1px solid rgba(0,0,0,0.05);
   display: flex;
   gap: 10px;
-  background: white;
+  background: var(--white);
 }
 
 .chat-input-area input {
   flex: 1;
-  padding: 12px 18px;
+  padding: 12px 20px;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 100px;
   outline: none;
   font-family: 'Inter', sans-serif;
+  transition: 0.3s;
 }
 
 .chat-input-area input:focus {
@@ -238,16 +211,15 @@
 
 .chat-input-area button {
   background: var(--purple-primary);
-  color: white;
+  color: var(--white);
   border: none;
-  width: 45px;
-  height: 45px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
   transition: 0.2s;
 }
 
@@ -256,12 +228,36 @@
   transform: scale(1.05);
 }
 
-@keyframes slideUpModal {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Socials */
+.socials-wrapper {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-@keyframes fadeInModal {
+.social-link {
+  background: rgba(255,255,255,0.8);
+  color: var(--dark-text);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition-smooth);
+}
+
+.social-link:hover {
+  background: var(--dark-text);
+  color: var(--bg-neon);
+}
+
+@keyframes slideInPanel {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeInOverlay {
   from { opacity: 0; }
   to { opacity: 1; }
 }
@@ -269,4 +265,10 @@
 @keyframes fadeInBubble {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .panel-container {
+    max-width: 100%;
+  }
 }
