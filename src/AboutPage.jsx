@@ -1,6 +1,12 @@
 import React from 'react';
 import './AboutPage.css';
 
+const LinkedInIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+  </svg>
+);
+
 const AboutPage = () => {
   return (
     <div className="about-page container">
@@ -24,7 +30,7 @@ const AboutPage = () => {
           </p>
           
           <p>
-            Loyihaning server infratuzilmasi, deploy jarayonlari va texnik muhitini tashkil etishda DevOps mutaxassisi <strong>Shaxriyor</strong> ham faol ishtirok etmoqda. Uning serverlar bilan ishlash, xavfsizlik va tizim barqarorligini ta'minlash bo‘yicha tajribasi loyiha rivojlanishiga muhim hissa qo‘shmoqda.
+            Loyihaning server infratuzilmasi, deploy jarayonlari va texnik muhitini tashkil etishda DevOps mutaxassisi <strong>Shaxriyor Jabborov</strong> ham faol ishtirok etmoqda. Uning serverlar bilan ishlash, xavfsizlik va tizim barqarorligini ta'minlash bo‘yicha tajribasi loyiha rivojlanishiga muhim hissa qo‘shmoqda.
           </p>
           
           <p className="about-mission">
@@ -42,8 +48,10 @@ const AboutPage = () => {
               <h3>Murod Dadaboyev</h3>
               <p>Founder & UI/UX Designer</p>
               <div className="team-links">
-                <a href="https://www.linkedin.com/in/murod-dadaboev" target="_blank" rel="noopener noreferrer" className="team-link-btn">LinkedIn</a>
-                <a href="#" className="team-link-btn">Website</a>
+                <a href="https://www.linkedin.com/in/murod-dadaboev" target="_blank" rel="noopener noreferrer" className="team-icon-link" title="LinkedIn">
+                  <LinkedInIcon />
+                </a>
+                <a href="https://murod.site/" target="_blank" rel="noopener noreferrer" className="team-link-btn">Website</a>
               </div>
             </div>
           </div>
@@ -53,11 +61,13 @@ const AboutPage = () => {
               <div className="avatar-placeholder">S</div>
             </div>
             <div className="team-info">
-              <h3>Shaxriyor</h3>
+              <h3>Shaxriyor Jabborov</h3>
               <p>DevOps Specialist</p>
               <div className="team-links">
-                <a href="#" target="_blank" rel="noopener noreferrer" className="team-link-btn">LinkedIn</a>
-                <a href="#" className="team-link-btn">Website</a>
+                <a href="https://www.linkedin.com/in/shaxriyor" target="_blank" rel="noopener noreferrer" className="team-icon-link" title="LinkedIn">
+                  <LinkedInIcon />
+                </a>
+                <a href="https://shaxa.dev" target="_blank" rel="noopener noreferrer" className="team-link-btn">shaxa.dev</a>
               </div>
             </div>
           </div>

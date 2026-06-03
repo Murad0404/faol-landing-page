@@ -5,13 +5,13 @@
   position: relative;
   z-index: 10;
   display: flex;
-  justify-content: center; /* Kontentni sayt o'rtasiga joylash */
+  justify-content: center;
 }
 
 .about-content-wrapper {
   max-width: 1000px;
   width: 100%;
-  text-align: left; /* Matn bloki ichidagi matn chapga tekislangan */
+  text-align: left;
   background: transparent;
   padding: 0;
 }
@@ -52,22 +52,10 @@
   max-width: 850px;
 }
 
-@media (max-width: 768px) {
-  .about-page {
-    padding: 2rem 0 6rem 0;
-  }
-  .about-title {
-    font-size: 2.8rem;
-  }
-  .about-text-content p {
-    font-size: 1.15rem;
-  }
-}
-
 /* Team Section Styles */
 .about-team-section {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   margin-top: 5rem;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -77,22 +65,22 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.5);
+  background: #ffffff; /* 100% Oq fon */
   padding: 1.5rem 2rem;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: var(--transition-smooth);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .team-card:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
 .team-avatar {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--purple-primary);
@@ -100,6 +88,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .team-avatar img {
@@ -116,31 +105,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
 }
 
 .team-info h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.25rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
   color: var(--dark-text);
+  white-space: nowrap;
 }
 
 .team-info p {
-  font-size: 1rem !important;
+  font-size: 0.95rem !important;
   color: var(--purple-primary) !important;
   font-weight: 600;
-  margin-bottom: 1rem !important;
+  margin-bottom: 0.8rem !important;
 }
 
 .team-links {
   display: flex;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.team-icon-link {
+  color: var(--dark-text);
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.team-icon-link:hover {
+  color: var(--purple-primary);
+  transform: scale(1.1);
 }
 
 .team-link-btn {
   font-size: 0.85rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   background: var(--dark-text);
   color: var(--white);
   text-decoration: none;
@@ -157,10 +160,12 @@
 @media (max-width: 768px) {
   .about-team-section {
     justify-content: center;
-    gap: 2rem;
   }
   .team-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
+  }
+  .about-title {
+    font-size: 2.8rem;
   }
 }
