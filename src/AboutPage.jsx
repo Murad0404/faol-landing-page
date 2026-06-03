@@ -51,7 +51,7 @@ const AboutPage = () => {
                 <a href="https://www.linkedin.com/in/murod-dadaboev" target="_blank" rel="noopener noreferrer" className="team-icon-link" title="LinkedIn">
                   <LinkedInIcon />
                 </a>
-                <a href="https://murod.site/" target="_blank" rel="noopener noreferrer" className="team-link-btn">Website</a>
+                <a href="https://murod.site/" target="_blank" rel="noopener noreferrer" className="team-link-btn">murod.site</a>
               </div>
             </div>
           </div>
