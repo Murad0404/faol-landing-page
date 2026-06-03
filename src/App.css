@@ -691,3 +691,20 @@
     margin-bottom: 0 !important;
   }
 }
+
+/* Further reduce empty space around player on mobile */
+@media (max-width: 768px) {
+  .hero-player-img {
+    margin-top: -3rem !important;
+    margin-bottom: -5rem !important;
+  }
+  
+  .hero-media-container {
+    margin-top: -5rem !important;
+  }
+
+  .hero {
+    padding-top: 2rem !important;
+    padding-bottom: 0 !important;
+  }
+}
