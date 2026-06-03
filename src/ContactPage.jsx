@@ -1,6 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ContactPage.css';
 
+const RobotIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 8V4H8" />
+    <rect width="16" height="12" x="4" y="8" rx="2" />
+    <path d="M2 14h2" />
+    <path d="M20 14h2" />
+    <path d="M15 13v2" />
+    <path d="M9 13v2" />
+  </svg>
+);
+
 const ContactPage = () => {
   const [messages, setMessages] = useState([
     { text: "Salom! Men Faol AI yordamchisiman. Ilova yoki asoschilar haqida savollaringiz bormi?", sender: 'ai' }
@@ -67,7 +78,10 @@ const ContactPage = () => {
         <div className="ai-chat-col">
           <div className="ai-chat-container-page">
             <div className="chat-header-page">
-              <span style={{fontSize: '1.2rem'}}>🤖</span> Faol AI Yordamchisi
+              <div className="ai-icon-wrapper">
+                <RobotIcon />
+              </div>
+              Faol AI Yordamchisi
             </div>
             <div className="chat-messages-page">
               {messages.map((msg, index) => (
