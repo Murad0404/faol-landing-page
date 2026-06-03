@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ContactPage from './ContactPage';
+import AboutPage from './AboutPage';
 import './App.css';
 
 // Premium Inline SVGs for perfect layout and zero dependency issues
@@ -68,7 +69,7 @@ function App() {
       <header className="header">
         <div className="header-glow-overlay"></div>
         <div className="container header-container">
-          <a href="#" className="logo">
+          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); setActiveTab("home"); }}>
             <img src="/assets/faol_full_logo.png" alt="Faol Logo" className="logo-full-img" />
           </a>
           <nav className="nav-pill">
@@ -76,12 +77,14 @@ function App() {
             <a href="#about" className={`nav-link ${activeTab === 'about' ? 'active' : 'inactive'}`} onClick={(e) => { e.preventDefault(); setActiveTab("about"); }}>Biz haqimizda</a>
             <a href="#contact" className={`nav-link ${activeTab === 'contact' ? 'active' : 'inactive'}`} onClick={(e) => { e.preventDefault(); setActiveTab("contact"); }}>Kontakt</a>
           </nav>
-          <a href="#download" className="cta-button">Get Started</a>
+          <a href="#download" className="cta-button" onClick={(e) => { e.preventDefault(); setActiveTab("home"); window.location.hash="download"; }}>Get Started</a>
         </div>
       </header>
 
       {activeTab === "contact" ? (
         <ContactPage />
+      ) : activeTab === "about" ? (
+        <AboutPage />
       ) : (
         <>
           <section className="hero">
@@ -178,7 +181,9 @@ function App() {
 
       {/* Footer Section */}
       <footer className="footer" id="contact">
-        <img src="/assets/user_field_bg.png" className="footer-field-bg" alt="Field Background" />
+        {activeTab !== "contact" && (
+          <img src="/assets/user_field_bg.png" className="footer-field-bg" alt="Field Background" />
+        )}
         <div className="container footer-container">
           <div className="footer-copyright">
             © 2026 Faol app Sport Dunyosi. <br />
